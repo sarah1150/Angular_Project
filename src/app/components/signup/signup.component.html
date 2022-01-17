@@ -1,0 +1,46 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <div class="cont">
+      <form class="Form" (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <h2>{{ isSignUp ? "Registeration" : "Login" }} Form</h2>
+        <div class="enterText">
+          <!-- to create a control for TD form write name of control & ngModel -->
+          <input
+            type="text"
+            placeholder="email"
+            class="inputText"
+            ngModel
+            name="username"
+            required
+            email
+          />
+
+          <input
+            type="password"
+            placeholder="password"
+            class="inputText"
+            ngModel
+            name="pass"
+            required
+            minlength="6"
+          />
+        </div>
+        <div class="bton">
+          <button type="submit" class="submit" [disabled]="!f.valid">
+            {{ isSignUp ? "SignUp" : "Login" }}
+          </button>
+
+          <button type="button" class="reset" (click)="onSwitchMode()">
+            Switch to {{ isSignUp ? "Login" : "SignUp" }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

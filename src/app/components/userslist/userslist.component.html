@@ -1,0 +1,38 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="userslist.component.css" />
+    <!--Bootstrap_CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <title>registeration</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row" style="margin-top: 50px">
+        <div class="col" *ngFor="let user of userlist">
+          <a [routerLink]="['/user', user.id]">
+            <img src="{{ user.avatar }}" alt=""
+          /></a>
+          <p>{{ user.first_name }}</p>
+          <p>{{ user.email }}</p>
+        </div>
+      </div>
+      <button
+        type="button"
+        class="btn btn-primary"
+        style="margin-left: 700px"
+        (click)="onClickMore()"
+      >
+        more
+      </button>
+    </div>
+  </body>
+</html>
