@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./userslist.component.css'],
 })
 export class UserslistComponent implements OnInit {
+  removeButton = false;
   userlist: any = [];
 
   constructor(private http: HttpClient) {}
@@ -22,6 +23,7 @@ export class UserslistComponent implements OnInit {
   }
 
   onClickMore() {
+    this.removeButton = true;
     this.http
       .get('https://reqres.in/api/users?page=2')
       .subscribe((usersPageTwo: any) => {

@@ -20,6 +20,21 @@
       <ul class="navbar-nav">
         <li class="nav-item dropdown">
           <a
+            class="nav-link"
+            [routerLink]="['/list']"
+            id="navbarDarkDropdownMenuLink"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            List Of Our Users
+          </a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a
             class="nav-link dropdown-toggle"
             href="#"
             id="navbarDarkDropdownMenuLink"
@@ -59,21 +74,6 @@
             <li><a class="dropdown-item" href="#">All News</a></li>
             <li><a class="dropdown-item" href="#">Gallery</a></li>
           </ul>
-        </li>
-      </ul>
-
-      <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link"
-            [routerLink]="['/list']"
-            id="navbarDarkDropdownMenuLink"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            List Of Our Users
-          </a>
         </li>
       </ul>
     </div>
